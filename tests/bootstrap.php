@@ -8,9 +8,9 @@
  */
 
 // Disable xdebug backtrace.
-if ( function_exists( 'xdebug_disable' ) ) {
-	xdebug_disable();
-}
+// if ( function_exists( 'xdebug_disable' ) ) {
+// 	xdebug_disable();
+// }
 
 echo 'Welcome to the EG Routing Plugin Test Suite' . PHP_EOL . PHP_EOL;
 
