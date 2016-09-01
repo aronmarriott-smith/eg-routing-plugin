@@ -4,9 +4,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Pugs_API_Endpoint
+ * EG_API_Endpoint
  *
- * @package EG_Routeing_Plugin
+ * @package EG_Routing_Plugin
  */
 class EG_API_Endpoint {
 

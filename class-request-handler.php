@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Request_Handler
  *
- * @package EG_Routeing_Plugin
+ * @package EG_Routing_Plugin
  */
 class EG_Request_Handler {
 

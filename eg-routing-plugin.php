@@ -6,22 +6,22 @@
  * Author: Aron Marriott-Smith
  * Author URL: https://aronmarriottsmith.co.uk
  *
- * @package EG_Routeing_Plugin
+ * @package EG_Routing_Plugin
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$globals['EG_Routeing_Plugin'] = new EG_Routeing_Plugin;
+$globals['EG_Routing_Plugin'] = new EG_Routing_Plugin;
 
-register_activation_hook( __FILE__, array( 'EG_Routing_Plugin', 'up' ) );
-register_deactivation_hook( __FILE__, array( 'EG_Routing_Plugin', 'down' ) );
+register_activation_hook( __FILE__, array( 'EG_Routing_Plugin', 'activate' ) );
+register_deactivation_hook( __FILE__, array( 'EG_Routing_Plugin', 'deactivate' ) );
 
 /**
  * Main plgin class
  */
-class EG_Routeing_Plugin {
+class EG_Routing_Plugin {
 
 	/**
 	 * Construct
@@ -34,14 +34,14 @@ class EG_Routeing_Plugin {
 	/**
 	 * Method callback for activation hook
 	 */
-	public static function up() {
+	public static function activate() {
 		EG_API_Endpoint::flush_permalinks();
 	}
 
 	/**
 	 * Method callback for deactivation hook
 	 */
-	public static function down() {
+	public static function deactivate() {
 		EG_API_Endpoint::flush_permalinks();
 	}
 
@@ -49,7 +49,7 @@ class EG_Routeing_Plugin {
 	 * Includes all the files need by out plugin
 	 */
 	public function load_dependencies() {
-		require_once __DIR__ . '/class-pugs-api-endpoint.php';
+		require_once __DIR__ . '/class-eg-api-endpoint.php';
 		require_once __DIR__ . '/class-request-handler.php';
 		require_once __DIR__ . '/controllers/class-example-controller.php';
 	}
