@@ -41,7 +41,6 @@ This plugin is in active development and all contributions are welcome. If you a
 
 ###To Do
 * Unit test the router class
-* Hook our repo up to [Travis IC](https://travis-ci.org/)
 * Allow closures to be passed in the route callbacks
 * Allow for strings to be passed into routes e.g. `'MyController@method'`
 * Add support for required route parameters e.g. `'posts/{post}/comments/{comment}'`
@@ -49,6 +48,7 @@ This plugin is in active development and all contributions are welcome. If you a
 * Allow for multiple HTTP methods for one route
 * Allow user to override the location of their routes file
 * Allow user to override the location of their controllers directory
+* ~~Hook our repo up to [Travis IC](https://travis-ci.org/)~~
 * ~~Rewrite plugin to use WordPress Rest API~~
 * ~~Setup unit tests for this plugin~~
 * ~~Create plugin~~
