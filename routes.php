@@ -8,6 +8,4 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Here you can define your basic routes.
  * We have provided an example to get you started.
  */
-return array(
-	'say-hello' => 'ExampleController@index',
-);
+$router->get( 'say-hello', array( 'as' => 'say_hello', 'uses' => 'ExampleController@index' ) );

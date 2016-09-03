@@ -2,7 +2,7 @@
 /**
  * Plugin Name: EG Routing Plugin
  * Description: A demo plugin for creating a simple routing system in WordPress
- * Version: 0.1.0
+ * Version: 0.2.0
  * Author: Aron Marriott-Smith
  * Author URL: https://aronmarriottsmith.co.uk
  *
@@ -28,29 +28,28 @@ class EG_Routing_Plugin {
 	 */
 	public function __construct() {
 		$this->load_dependencies();
-		$this->init_hooks();
+		$this->compile_routes( new EG_Router( 'eg_routing/api' ) );
+
+		// $this->init_hooks();
 	}
 
 	/**
 	 * Method callback for activation hook
 	 */
 	public static function activate() {
-		EG_API_Endpoint::flush_permalinks();
 	}
 
 	/**
 	 * Method callback for deactivation hook
 	 */
 	public static function deactivate() {
-		EG_API_Endpoint::flush_permalinks();
 	}
 
 	/**
 	 * Includes all the files need by out plugin
 	 */
 	public function load_dependencies() {
-		require_once __DIR__ . '/class-eg-api-endpoint.php';
-		require_once __DIR__ . '/class-request-handler.php';
+		require_once __DIR__ . '/class-router.php';
 		require_once __DIR__ . '/controllers/class-example-controller.php';
 	}
 
@@ -58,6 +57,16 @@ class EG_Routing_Plugin {
 	 * Redgister the hooks required by our plugin
 	 */
 	public function init_hooks() {
-		add_action( 'init', array( (new EG_API_Endpoint), 'init' ) );
+	}
+
+	/**
+	 * Compiles our routes
+	 *
+	 * @param EG_Router $router Our API router.
+	 */
+	public function compile_routes( EG_Router $router ) {
+		require_once __DIR__ . '/routes.php';
+		$router->cache();
+		add_action( 'rest_api_init', array( $router, 'compile' ) );
 	}
 }
