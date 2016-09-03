@@ -48,7 +48,7 @@ This plugin is in active development and all contributions are welcome. If you a
 * Allow for multiple HTTP methods for one route
 * Allow user to override the location of their routes file
 * Allow user to override the location of their controllers directory
-* ~~Hook our repo up to [Travis IC](https://travis-ci.org/)~~
+* ~~Hook our repo up to [Travis CI](https://travis-ci.org/)~~
 * ~~Rewrite plugin to use WordPress Rest API~~
 * ~~Setup unit tests for this plugin~~
 * ~~Create plugin~~
@@ -59,6 +59,7 @@ This plugin is in active development and all contributions are welcome. If you a
 * Resourceful routing
 
 ###Development Log
+* 2016-09-03 - Hooked our repo up to [Travis CI](https://travis-ci.org/aronmarriott-smith/eg-routing-plugin)
 * 2016-09-03 - Rewrote plugin to use the WordPress Rest API
 * 2016-09-01 - Added unit tests
 * 2016-08-30 - Initial commit
