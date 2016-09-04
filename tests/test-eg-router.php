@@ -63,7 +63,8 @@ class EG_Router_Test extends EG_Routing_Plugin_UnitTestCase {
 	 * @expectedException InvalidArgumentException
 	 */
 	public function test_an_exception_is_thrown_when_a_nonexistent_or_not_whitelisted_method_is_called() {
-		$this->assertInstanceOf( InvalidArgumentException::class, $this->instance->foobar() );
+		$exception_instance = new InvalidArgumentException;
+		$this->assertInstanceOf( $exception_instance, $this->instance->foobar() );
 	}
 
 	/**
