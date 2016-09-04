@@ -7,7 +7,7 @@ This plugin is a demonstration of how to create a reusable *Laravel like* router
 ##Requirements
 
 * To run this plugin you will need a copy of WordPress 4.4 or grater - you can download the latest version from [wordpress.org](https://wordpress.org/download/).
-* The recommended version of PHP to run this plugin is 5.6 or grater. However or plugin is backwards compatible to PHP 5.3.
+* The recommended version of PHP to run this plugin is 5.6 or grater. However our plugin is backwards compatible to PHP 5.3.
 
 ##Quick Start
 
