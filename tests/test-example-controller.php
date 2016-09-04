@@ -6,9 +6,9 @@
  */
 
 /**
- * EG_Routeing_Plugin_Test
+ * EG_Routing_Plugin_Test
  */
-class Example_Controler_Test extends EG_Routeing_Plugin_UnitTestCase {
+class Example_Controler_Test extends EG_Routing_Plugin_UnitTestCase {
 
 
 

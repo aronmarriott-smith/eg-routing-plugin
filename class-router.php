@@ -63,12 +63,21 @@ class EG_Router {
 	}
 
 	/**
+	 * Get the API namespace.
+	 *
+	 * @return string
+	 */
+	public function get_namespace() {
+		return $this->namespace;
+	}
+
+	/**
 	 * Compiles our routes.
 	 */
 	public static function compile() {
-		$this->routes = get_option( self::$option_slug, array() );
+		$routes = get_option( self::$option_slug, array() );
 
-		foreach ( $this->routes as $route_data ) {
+		foreach ( $routes as $route_data ) {
 			register_rest_route(
 				$route_data['namespace'],
 				$route_data['route'],
@@ -99,9 +108,7 @@ class EG_Router {
 	 *
 	 * @return void
 	 */
-	public function add( $route, array $parameters = array(), $override = false ) {
-		global $wp_rest_server;
-
+	public function add( $route, Array $parameters = array(), $override = false ) {
 		if ( ! isset( $parameters['uses'] ) ) {
 			throw new Exception( "Missing array key 'uses'" );
 		}
@@ -115,14 +122,6 @@ class EG_Router {
 		if ( strpos( $parameters['uses'], '@' ) !== false ) {
 			$parts = explode( '@', $parameters['uses'] );
 			$args['callback'] = array( new $parts[0], $parts[1] );
-		}
-
-		if ( isset( $parameters['auth'] ) ) {
-			$args['permission_callback'] = $parameters['auth'];
-			if ( strpos( $parameters['auth'], '@' ) !== false ) {
-				$parts = explode( '@', $parameters['auth'] );
-				$args['permission_callback'] = array( new $parts[0], $parts[1] );
-			}
 		}
 
 		$this->routes[] = array(
@@ -142,11 +141,7 @@ class EG_Router {
 	 *
 	 * @return mixed
 	 */
-	public function __call( $method, array $parameters = array() ) {
-		if ( method_exists( $this, $method ) ) {
-			return call_user_func_array( array( $this, $method ), $parameters );
-		}
-
+	public function __call( $method, Array $parameters = array() ) {
 		if ( in_array( strtoupper( $method ), static::$methods, true ) ) {
 			$parameters[1]['method'] = strtoupper( $method );
 			return call_user_func_array( array( $this, 'add' ), $parameters );

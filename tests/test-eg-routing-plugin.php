@@ -6,9 +6,9 @@
  */
 
 /**
- * EG_Routeing_Plugin_Test
+ * EG_Routing_Plugin_Test
  */
-class EG_Routing_Plugin_Test extends EG_Routeing_Plugin_UnitTestCase {
+class EG_Routing_Plugin_Test extends EG_Routing_Plugin_UnitTestCase {
 
 	/**
 	 * Holds an instance of our plugin class.
