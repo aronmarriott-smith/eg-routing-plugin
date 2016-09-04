@@ -216,7 +216,8 @@ class EG_Router_Test extends EG_Routing_Plugin_UnitTestCase {
 			'method' => 'GET',
 			'args' => array(),
 		);
-		$this->assertInstanceOf( Exception::class, $this->instance->add( 'say-hello', $paramiters, false ) );
+		$exception_instance = new Exception;
+		$this->assertInstanceOf( $exception_instance, $this->instance->add( 'say-hello', $paramiters, false ) );
 	}
 
 }
