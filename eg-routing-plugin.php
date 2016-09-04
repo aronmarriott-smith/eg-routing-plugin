@@ -2,7 +2,7 @@
 /**
  * Plugin Name: EG Routing Plugin
  * Description: A demo plugin for creating a simple routing system in WordPress
- * Version: 0.2.0
+ * Version: 0.2.1
  * Author: Aron Marriott-Smith
  * Author URL: https://aronmarriottsmith.co.uk
  *

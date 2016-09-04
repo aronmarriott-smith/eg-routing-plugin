@@ -7,7 +7,7 @@ This plugin is a demonstration of how to create a reusable *Laravel like* router
 ##Requirements
 
 * To run this plugin you will need a copy of WordPress 4.4 or grater - you can download the latest version from [wordpress.org](https://wordpress.org/download/).
-* The recommended version of PHP to run this plugin is 5.6 or grater. However or plugin is backwards compatible to PHP 5.2.
+* The recommended version of PHP to run this plugin is 5.6 or grater. However or plugin is backwards compatible to PHP 5.3.
 
 ##Quick Start
 
@@ -42,7 +42,6 @@ You should see the string `'Hello world'`. If you see a 404 page instead check y
 This plugin is in active development and all contributions are welcome. If you are sending a pull request please try to stick to the [WordPress PHP coding standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/) where possible. If you find a bug or wish to report an issue please [do that here](https://github.com/aronmarriott-smith/eg-routing-plugin/issues).
 
 ###To Do
-* Unit test the router class
 * Allow closures to be passed in the route callbacks
 * Allow for strings to be passed into routes e.g. `'MyController@method'`
 * Add support for required route parameters e.g. `'posts/{post}/comments/{comment}'`
@@ -50,6 +49,7 @@ This plugin is in active development and all contributions are welcome. If you a
 * Allow for multiple HTTP methods for one route
 * Allow user to override the location of their routes file
 * Allow user to override the location of their controllers directory
+* ~~Unit test the router class~~
 * ~~Hook our repo up to [Travis CI](https://travis-ci.org/)~~
 * ~~Rewrite plugin to use WordPress Rest API~~
 * ~~Setup unit tests for this plugin~~
@@ -61,6 +61,7 @@ This plugin is in active development and all contributions are welcome. If you a
 * Resourceful routing
 
 ###Development Log
+* 2016-09-04 - Added unit tests for the router class.
 * 2016-09-03 - Hooked our repo up to [Travis CI](https://travis-ci.org/aronmarriott-smith/eg-routing-plugin)
 * 2016-09-03 - Rewrote plugin to use the WordPress Rest API
 * 2016-09-01 - Added unit tests
