@@ -1,6 +1,7 @@
 #EG Routing Plugin
 
 [![Build Status](https://api.travis-ci.org/aronmarriott-smith/eg-routing-plugin.png)](https://travis-ci.org/aronmarriott-smith/eg-routing-plugin)
+[![Code Climate](https://codeclimate.com/github/aronmarriott-smith/eg-routing-plugin/badges/gpa.svg)](https://codeclimate.com/github/aronmarriott-smith/eg-routing-plugin)
 
 This plugin is a demonstration of how to create a reusable *Laravel like* router for WordPress.
 
